@@ -14,3 +14,32 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+var num = 0;
+function addContentForm() {
+
+if (num >= 10) { 
+alert("maxed out");
+} else {
+
+num++;
+
+var li = document.createElement('li');
+li.innerHTML = "<input id='post_contents_attributes_"+num+"_image' name='post[contents_attributes]["+num+"][image]' type='file' />";
+  
+  document.getElementById('content').appendChild(li);
+
+}
+}
+
+function removeContentForm() {
+if (num > 0 ) {num--;
+}
+
+	var li = document.getElementsByTagName("li")[1];
+var parent = li.parentNode;
+parent.removeChild(li)
+
+
+}

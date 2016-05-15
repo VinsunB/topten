@@ -3,11 +3,11 @@
     <div id="error_explanation">
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-      <ul>
+      
       <% @post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+       <%= message %>
       <% end %>
-      </ul>
+     
     </div>
   <% end %>
 
@@ -17,12 +17,22 @@
   </div>
  
   <div class="actions">
-  
-<%= f.fields_for :contents do |ff| %>
-<%= ff.file_field :image %>
+
+
+
+
+<%= f.fields_for :contents, Content.new do |ff|%>
+<ol id="content">
+<li><%= ff.file_field :image %></li>
+
+
+</ol>
 <% end %>
 
 
     <%= f.submit %>
   </div>
 <% end %>
+<br>
+<button id="addButton" onclick="addContentForm()"> add photo </button>
+<button id="removeButton" onclick="removeContentForm()"> remove photo </button>
