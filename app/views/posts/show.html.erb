@@ -1,14 +1,21 @@
 <p id="notice"><%= notice %></p>
-
+<div id="panel">
 <p>
   <strong>Title:</strong>
   <%= @post.title %>
 </p>
- <% @post.contents.each do |c| %>
+ <% @content.each do |c| %>
+ 
+<h3><%= c.title %></h3>
+
  <%= image_tag c.image %>
+<p><%= c.body %></p>
 <% end %>
 <p>
-  
+
+<%= will_paginate @content %>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
+
+  </div>

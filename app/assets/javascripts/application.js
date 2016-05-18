@@ -19,15 +19,15 @@
 var num = 0;
 function addContentForm() {
 
-if (num >= 10) { 
+if (num >= 9) { 
 alert("maxed out");
 } else {
 
 num++;
 
 var li = document.createElement('li');
-li.innerHTML = "<input id='post_contents_attributes_"+num+"_image' name='post[contents_attributes]["+num+"][image]' type='file' />";
-  
+li.innerHTML = '<br> <input id="post_contents_attributes_'+num+'_image" name="post[contents_attributes]['+num+'][image]" type="file" /></li><br><label for="post_contents_attributes_'+num+'_title">Title</label><input id="post_contents_attributes_'+num+'_title" name="post[contents_attributes]['+num+'][title]" type="text" /><br><label for="post_contents_attributes_'+num+'_body">Body</label><input id="post_contents_attributes_'+num+'_body" name="post[contents_attributes]['+num+'][body]" type="text" />'
+
   document.getElementById('content').appendChild(li);
 
 }
